@@ -5,7 +5,7 @@ const { validateBody, schemas } = require('../helpers/routeHelper');
 const UserController = require('../controllers/userController');
 
 router.route('/register')
-    .post(UserController.register);
+    .post(validateBody(schemas.authSchema), UserController.register);
 
 router.route('/login')
     .post(UserController.register);
